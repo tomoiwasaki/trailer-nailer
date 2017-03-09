@@ -1,1 +1,0 @@
-# tomoiwasaki.github.io
