@@ -1,11 +1,11 @@
-# comp20-s2017-team21
+COMP20 Final Project Proposal
 by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki
 
-Project title: MV Master? Music Expert? Recognisong? 
+Project title: Recognisong
 
 Problem statement:
 - Create a website that allows user to play a song recognition game. In each play, user will watch a short part of a music video and identify the music video.
-- The website will allow the user to choose to do quiz on songs of the same artist, same genre, or just random songs.
+- The website will allow the user to choose to do the quiz on songs of the same artist, same genre, or just random songs.
 - The website will allow users to challenge each other to find the “true” fan of a band or an artist!
 
 How to solve the problem:
@@ -19,6 +19,7 @@ Features that we will implement:
 - Client side framwork.
 - Front-end framework.
 - Send emails, SMSs, and push notifications.
+- Charts and graphs.
 
 Data the prototype will be collecting:
 - Song’s information from YouTube.
