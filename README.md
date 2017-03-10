@@ -30,5 +30,6 @@ Algorithms or special technique:
 - Selection algorithm to select songs based on user preferences. (e.g. genre, local bands only, etc.)
 - Randomized algorithm to choose a random part of the MV to play and to randomized a playlist.
 
-Mockup
+Mockup:
+
 ![mockup](final-mockup.jpg)
