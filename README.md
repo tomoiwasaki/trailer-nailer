@@ -1,4 +1,5 @@
 COMP20 Final Project Proposal
+
 by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki
 
 Project title: Recognisong
