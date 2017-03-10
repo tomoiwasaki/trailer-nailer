@@ -25,5 +25,5 @@ Data the prototype will be collecting:
 - User’s email and phone number (optional).
 
 Algorithms or special technique:
-- Selection algorithm to select songs based and user preferences. (e.g. genre, local bands only, etc.)
+- Selection algorithm to select songs based on user preferences. (e.g. genre, local bands only, etc.)
 - Randomized algorithm to choose a random part of the MV to play and to randomized a playlist.
