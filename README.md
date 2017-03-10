@@ -1,6 +1,6 @@
 COMP20 Final Project Proposal
 
-by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki, Arpan Gurung
+by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki, Arpan Gurung, Georgios Frantzis Phylactopoulos
 
 Project title: Recognisong
 
