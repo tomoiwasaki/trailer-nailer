@@ -1,6 +1,6 @@
 COMP20 Final Project Proposal
 
-by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki
+by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki, Arpan Gurung
 
 Project title: Recognisong
 
@@ -29,3 +29,6 @@ Data the prototype will be collecting:
 Algorithms or special technique:
 - Selection algorithm to select songs based on user preferences. (e.g. genre, local bands only, etc.)
 - Randomized algorithm to choose a random part of the MV to play and to randomized a playlist.
+
+Mockup
+![mockup](final-mockup.jpg)
