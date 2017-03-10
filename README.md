@@ -16,8 +16,8 @@ How to solve the problem:
 - Send email/SMS and push notification whenever someone receives a challenge from others.
 
 Features that we will implement:
-- Server side framework.
-- Client side framwork.
+- Server side data persistence.
+- Client side persistence.
 - Front-end framework.
 - Send emails, SMSs, and push notifications.
 - Charts and graphs.
