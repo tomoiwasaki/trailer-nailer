@@ -1,5 +1,5 @@
 # comp20-s2017-team21
-by: Minh D. Nguyen, Huynh Tran,
+by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki
 
 Project title: MV Master? Music Expert? Recognisong? 
 
