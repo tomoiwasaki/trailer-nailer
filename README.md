@@ -33,3 +33,7 @@ Algorithms or special technique:
 Mockup:
 
 ![mockup](final-mockup.jpg)
+
+#Comments by Ming
+* I was going to ding you for listing a bunch of technologies under "Features that we will implement" as they are not features.  Your "How to solve the problem" is essentially the list of features.  Way cool of an idea!
+* But isn't this game rather easy if one can see the music video?
