@@ -75,12 +75,39 @@
 </script>
 <h1 id="title">Which movie is this?</h1>
 
+<div> Time left: <span id="time"></span> </div>
+
 <div class="holder">
      <div id="video"></div>
      <div class="bar" id="bottom-layer">.</div>
 </div>
 
 <div id="choices"></div>
+
+<script type="text/javascript">
+	function startTimer(duration, display) {
+    	var timer = duration, minutes, seconds;
+    	setInterval(function () {
+        	minutes = parseInt(timer / 60, 10);
+        	seconds = parseInt(timer % 60, 10);
+
+        	minutes = minutes < 10 ? minutes : minutes;
+        	seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        	display.textContent = minutes + ":" + seconds;
+
+        	if (--timer < 0) {
+            	timer = duration;
+        	}
+    	}, 1000); // how fast timer runs
+	}
+
+	window.onload = function () {
+    	var oneMinute = 60,
+        display = document.querySelector('#time');
+    	startTimer(oneMinute, display);
+	};
+	</script>
 
 </body>
 </html>	
