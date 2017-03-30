@@ -9,6 +9,8 @@
 <body>
 <h1 id="title">Which movie is this?</h1>
 
+<div> Time left: <span id="time"></span> </div>
+
 <div class="holder">
      <iframe id="ytplayer" type="text/html" width="640" height="360"
   		src="https://www.youtube.com/embed/gKR7O5B9qqg?autoplay=1&showinfo=0&controls=0&modestbranding=1"
@@ -17,6 +19,31 @@
 </div>
 
 <div id="choices"></div>
+
+<script type="text/javascript">
+	function startTimer(duration, display) {
+    	var timer = duration, minutes, seconds;
+    	setInterval(function () {
+        	minutes = parseInt(timer / 60, 10);
+        	seconds = parseInt(timer % 60, 10);
+
+        	minutes = minutes < 10 ? minutes : minutes;
+        	seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        	display.textContent = minutes + ":" + seconds;
+
+        	if (--timer < 0) {
+            	timer = duration;
+        	}
+    	}, 1000); // how fast timer runs
+	}
+
+	window.onload = function () {
+    	var oneMinute = 60,
+        display = document.querySelector('#time');
+    	startTimer(oneMinute, display);
+	};
+	</script>
 
 </body>
 </html>	
