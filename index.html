@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Login</title>
- 
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,7 +38,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">My Profile <span class="sr-only">(current)</span></a></li>
           <li> <a href="#">My Friends</a></li>
-          <li><a href="#">Play!</a></li> 
+          <li><a href="#">Play!</a></li>
         </ul>
 
       </div><!-- /.navbar-collapse -->
@@ -84,13 +84,13 @@
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '658317147697605',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.8' // use graph api version 2.8
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -113,7 +113,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + "658317147697605";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
@@ -123,8 +123,24 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+
+      loggedIn();
+
+      function loggedIn() {
+        setTimeout(myTimeout1, 2000)
+        setTimeout(myTimeout2, 4000)
+        setTimeout(myTimeout3, 6000)
+      }
+      function myTimeout1() {
+        document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+      }
+      function myTimeout2() {
+        document.getElementById("status").innerHTML = "You will now be redirected to the main game screen...";
+      }
+      function myTimeout3() {
+        window.location.replace("game-screen.html");
+      }
+
     });
   }
 </script>
@@ -138,10 +154,8 @@
 <div class="col-xl-4 text-center">
     <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
     </fb:login-button>
-</div>
-
-
-<div id="status">
+    <div id="status">
+    </div>
 </div>
 
 </body>
