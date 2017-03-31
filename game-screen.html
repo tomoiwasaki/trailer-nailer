@@ -64,7 +64,7 @@
 </script>
 <h1 id="title">Which movie is this?</h1>
 
-<div> Time left: <span id="time"></span> </div>
+<div> <span id="time"></span> </div>
 
 <div class="holder">
      <div id="video"></div>
@@ -77,13 +77,19 @@
 	function startTimer(duration, display) {
     	var timer = duration, minutes, seconds;
     	setInterval(function () {
-        	minutes = parseInt(timer / 60, 10);
+        	minutes = parseInt(timer / 60, 10); 
         	seconds = parseInt(timer % 60, 10);
 
         	minutes = minutes < 10 ? minutes : minutes;
         	seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        	display.textContent = minutes + ":" + seconds;
+            display = document.getElementById("time");
+            display.innerHTML = "Time Left: " + minutes + ":" + seconds;
+
+            if(minutes == 0 && seconds == 0) {
+                display.innerHTML = "Time's up!";
+                return;
+            }
 
         	if (--timer < 0) {
             	timer = duration;
@@ -96,6 +102,7 @@
         display = document.querySelector('#time');
     	startTimer(oneMinute, display);
 	};
+
 	</script>
 
 </body>
