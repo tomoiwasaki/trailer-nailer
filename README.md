@@ -2,16 +2,16 @@ COMP20 Final Project Proposal
 
 by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki, Arpan Gurung, Georgios Frantzis Phylactopoulos
 
-Project title: Recognisong
+Project title: Trailer Nailer
 
 Problem statement:
-- Create a website that allows user to play a song recognition game. In each play, user will watch a short part of a music video and identify the music video.
-- The website will allow the user to choose to do the quiz on songs of the same artist, same genre, or just random songs.
-- The website will allow users to challenge each other to find the “true” fan of a band or an artist!
+- Create a website that allows user to play a movie recognition game. In each play, user will watch a short part of a movie trailer video and identify the movie.
+- The website will allow the user to choose to do the quiz on movies of the same year, same genre, or just random movies.
+- The website will allow users to challenge each other to find the “true” movie nerd!
 
 How to solve the problem:
-- Use YouTube API to get MVs from YouTube and the information of each song.
-- Use server-side database to store user’s information such as authentication information and high scores, and song’s information such as URL, song name, artist name, and popularity.
+- Use YouTube API to get movie trailer from YouTube and the information of each movie.
+- Use server-side database to store user’s information such as authentication information and high scores, and movie’s information such as YouTube ID, movie name, year of production, and genre.
 - Use client-side storage to retain user’s login information.
 - Send email/SMS and push notification whenever someone receives a challenge from others.
 
@@ -23,12 +23,12 @@ Features that we will implement:
 - Charts and graphs.
 
 Data the prototype will be collecting:
-- Song’s information from YouTube.
+- Movie’s information from YouTube.
 - User’s email and phone number (optional).
 
 Algorithms or special technique:
-- Selection algorithm to select songs based on user preferences. (e.g. genre, local bands only, etc.)
-- Randomized algorithm to choose a random part of the MV to play and to randomized a playlist.
+- Selection algorithm to select movies based on user preferences. (e.g. genre, local bands only, etc.)
+- Randomized algorithm to choose a random part of the trailer to play and to randomized a playlist.
 
 Mockup:
 
