@@ -4,7 +4,7 @@ by: Minh D. Nguyen, Huynh Tran, Tomo Iwasaki, Arpan Gurung, Georgios Frantzis Ph
 
 Project title: Trailer Nailer
 
-Problem statement:
+Problem statement: 
 - Create a website that allows user to play a movie recognition game. In each play, user will watch a short part of a movie trailer video and identify the movie.
 - The website will allow the user to choose to do the quiz on movies of the same year, same genre, or just random movies.
 - The website will allow users to challenge each other to find the “true” movie nerd!
