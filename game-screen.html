@@ -106,7 +106,28 @@
      <div class="bar" id="bottom-layer">.</div>
 </div>
 
-<div id="choices"></div>
+<div id="choices">
+	<button onclick="notscore()">Finding Nemo</button>
+	<button onclick="notscore()">Zootopia</button>
+	<button onclick="notscore()">Reef</button>
+	<button onclick="plusscore()">Finding Dory</button>
+</div>
+
+<h3 id="score"> Score: 0 </h3> 
+
+<script type="text/javascript">
+	var score = 0;
+	function notscore(){
+		document.getElementById("score").innerHTML = "Score: " + score;
+		onYouTubeIframeAPIReady();
+	}
+	function plusscore(){
+		score++;
+		document.getElementById("score").innerHTML = "Score: " + score;
+		onYouTubeIframeAPIReady();
+	}
+</script>
+
 
 <script type="text/javascript">
 	function startTimer(duration, display) {
@@ -139,6 +160,5 @@
 	};
 
 	</script>
-
 </body>
 </html>	
