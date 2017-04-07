@@ -12,7 +12,7 @@ Project Title: Trailer Nailer
 2. Challenges and issues team faced during the week
 - YouTube API did not support link disablement, hence a simple HTML trick that uses a transparent "block" must be used to prevent users from accessing the source video through YouTube and getting its information.
 - In the game screen, clicking on answers has not made changes we need in the video (It can stop the video, but fail to reload it or make it load a new video, simply because we only have one video in stock).
-- Secondly, when clicking the right answer, the score increases, however, it does not prevent the answer from being clicked again, which triggers the score to increase once more. Therefore, the score can be increased indefinitely.
+- When clicking the right answer, the score increases, however, it does not prevent the answer from being clicked again, which triggers the score to increase once more. Therefore, the score can be increased indefinitely.
 
 3. Goals for the next week
 - Build a database collections of multiple movie trailers of different categories.
