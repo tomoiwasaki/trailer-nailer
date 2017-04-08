@@ -23,4 +23,4 @@ Project Title: Trailer Nailer
 - Build a connection between the login page and index page.
 - Build the page so that the game stops when the time is up. 
 - Complete the styling of the two HTML pages that have been 
-  created, using bootstrap.Eventually, styling choices (fonts, colours, backgrounds, footers etc.) will be consistant throughout the website.
+  created, using bootstrap.Eventually, styling choices (fonts, colours, backgrounds, footers etc.) will be consistant throughout the website. 
