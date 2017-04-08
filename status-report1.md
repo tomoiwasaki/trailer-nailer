@@ -6,7 +6,8 @@ Project Title: Trailer Nailer
 
 1. What was accomplished during the week
 - Built the basic HTML pages such that the login screen and the game screen.
-- For the game screen, display a sample video from YouTube in 10 random seconds using YouTube API and prevent the user from controlling the video.
+- For the game screen, display a sample video from YouTube in 10 random seconds using YouTube API and prevent the user from controlling the video, and viewing the video title.
+- For the game screen, display a timer that counts down from 60 seconds and stops when time is up.
 - Built rudimentary answer choices and scoring system. However, they are far from being operable.
 
 2. Challenges and issues team faced during the week
@@ -19,3 +20,4 @@ Project Title: Trailer Nailer
 - Build a choice system that interacts with the database (fetching answers for specific video, knowing which is the correct one), and is able to load new video from the database, without resetting the timer and allowing user to click multiple answers for one video.
 - Build an index page that allows users to access the main menu to go to the game or to access their profile.
 - Build a connection between the login page and index page.
+- Build the page so that the game stops when the time is up. 
