@@ -9,6 +9,7 @@ Project Title: Trailer Nailer
 - For the game screen, display a sample video from YouTube in 10 random seconds using YouTube API and prevent the user from controlling the video, and viewing the video title.
 - For the game screen, display a timer that counts down from 60 seconds and stops when time is up.
 - Built rudimentary answer choices and scoring system. However, they are far from being operable.
+- Performed initial styling of the pages, using bootstrap. A custom bootstrap Navbar was placed in both pages.
 
 2. Challenges and issues team faced during the week
 - YouTube API did not support link disablement, hence a simple HTML trick that uses a transparent "block" must be used to prevent users from accessing the source video through YouTube and getting its information.
@@ -21,3 +22,5 @@ Project Title: Trailer Nailer
 - Build an index page that allows users to access the main menu to go to the game or to access their profile.
 - Build a connection between the login page and index page.
 - Build the page so that the game stops when the time is up. 
+- Complete the styling of the two HTML pages that have been 
+  created, using bootstrap.Eventually, styling choices (fonts, colours, backgrounds, footers etc.) will be consistant throughout the website.
