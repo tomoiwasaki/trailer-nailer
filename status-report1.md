@@ -10,6 +10,7 @@ Project Title: Trailer Nailer
 - For the game screen, display a timer that counts down from 60 seconds and stops when time is up.
 - Built rudimentary answer choices and scoring system. However, they are far from being operable.
 - Performed initial styling of the pages, using bootstrap. A custom bootstrap Navbar was placed in both pages.
+- Implemented a Facebook login which redirects to the main game page.
 
 2. Challenges and issues team faced during the week
 - YouTube API did not support link disablement, hence a simple HTML trick that uses a transparent "block" must be used to prevent users from accessing the source video through YouTube and getting its information.
