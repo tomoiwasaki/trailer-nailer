@@ -25,3 +25,6 @@ Project Title: Trailer Nailer
 - Build the page so that the game stops when the time is up. 
 - Complete the styling of the two HTML pages that have been 
   created, using bootstrap.Eventually, styling choices (fonts, colours, backgrounds, footers etc.) will be consistant throughout the website. 
+
+#Comments by Ming
+* Again, don't aim for perfection.  That first challenge is nearly impossible, all hackjob
