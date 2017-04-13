@@ -39,8 +39,9 @@ app.post('/submit', function(request, response) {
   	if (url.parse(request.url).query == null) {
     	response.send('Please send valid queries with movie name, id, genre, and year');
   	} else {
-    	var querystring = url.parse(request.url).query;
-    	var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');    
+    	// var querystring = url.parse(request.url).query;
+    	// var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');    
+    	var query = JSON.parse(response.body);
     	if (typeof query['name'] ==  undefined || typeof query['id'] ==  undefined || typeof query['genre'] ==  undefined || typeof query['year'] ==  undefined) {
       		response.send('Please send valid queries with movie name, id, genre, and year');
     	} else {
