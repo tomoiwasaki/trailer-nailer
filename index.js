@@ -5,7 +5,6 @@ var url = require("url");
 var app = express();
 
 var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trailer-nailer';
-//var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://limitless-springs-63304.herokuapp.com/notuber';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
   db = databaseConnection;
@@ -25,9 +24,51 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+  	console.log('Node app is running on port', app.get('port'));
 });
 
-app.get('/', function(req, res) {
-	response.send('index.html');
+app.get('/', function(request, response) {
+	response.set('Content-Type', 'text/html');
+	response.sendfile('index.html');
 });
+
+app.post('/submit', function(request, response) {
+  	response.header("Access-Control-Allow-Origin", "*");
+  	response.header("Access-Control-Allow-Headers", "X-Requested-With");	
+
+  	if (url.parse(request.url).query == null) {
+    	response.send('Please send valid queries with movie name, id, genre, and year');
+  	} else {
+    	var querystring = url.parse(request.url).query;
+    	var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');    
+    	if (typeof query['name'] ==  undefined || typeof query['id'] ==  undefined || typeof query['genre'] ==  undefined || typeof query['year'] ==  undefined) {
+      		response.send('Please send valid queries with movie name, id, genre, and year');
+    	} else {
+    		var name = query['name'];
+    		var id = query['id'];
+    		var genre = query['genre'];
+    		var year = query['year'];
+		    var toInsert = {
+		    	"name" : name,
+		        "id" : id,
+		        "genre" : genre,
+		        "year" : year
+		    };
+    		db.collection('movies', function(err, col) {
+    			if (err) {
+    				response.send(500);
+    			} else {
+    				coll.insert(toInsert, function(error, saved) {
+    					if (error) {
+    						response.send(500);
+    					} else {
+    						response.send(200);
+    					}
+    				});
+    			}
+    		});
+    	}
+    }
+});
+
+
