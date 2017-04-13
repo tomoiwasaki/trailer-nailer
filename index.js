@@ -4,7 +4,7 @@ var validator = require('validator');
 var url = require("url");
 var app = express();
 
-var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://trailer-nailer.herokuapp.com/notuber';
+var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://trailer-nailer.herokuapp.com/movies';
 // var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trailer-nailer';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
@@ -41,8 +41,10 @@ app.post('/submit', function(request, response) {
     //	response.send('Please send valid queries with movie name, id, genre, and year');
   	// } else {
     	// var querystring = url.parse(request.url).query;
-    	// var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');    
-    var query = JSON.parse(responseBody);
+    	// var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');  
+    var query = request.body;
+    console.log(query);
+    // var query = JSON.parse(request.body);
     if (typeof query['name'] ==  undefined || typeof query['id'] ==  undefined || typeof query['genre'] ==  undefined || typeof query['year'] ==  undefined) {
       	response.send('Please send valid queries with movie name, id, genre, and year');
     } else {
@@ -60,7 +62,7 @@ app.post('/submit', function(request, response) {
     		if (err) {
     			response.send(500);
     		} else {
-    			coll.insert(toInsert, function(error, saved) {
+    			col.insert(toInsert, function(error, saved) {
     				if (error) {
     					response.send(500);
     				} else {
@@ -70,7 +72,6 @@ app.post('/submit', function(request, response) {
     		}
    		});
    	}
-//    }
 });
 
 
