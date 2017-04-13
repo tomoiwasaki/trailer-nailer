@@ -36,9 +36,9 @@ app.post('/submit', function(request, response) {
   	response.header("Access-Control-Allow-Origin", "*");
   	response.header("Access-Control-Allow-Headers", "X-Requested-With");	
 
-  	if (url.parse(request.url).query == null) {
-    	response.send('Please send valid queries with movie name, id, genre, and year');
-  	} else {
+  	// if (url.parse(request.url).query == null) {
+    //	response.send('Please send valid queries with movie name, id, genre, and year');
+  	// } else {
     	// var querystring = url.parse(request.url).query;
     	// var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');    
     	var query = JSON.parse(response.body);
@@ -69,7 +69,7 @@ app.post('/submit', function(request, response) {
     			}
     		});
     	}
-    }
+//    }
 });
 
 
