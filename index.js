@@ -41,34 +41,34 @@ app.post('/submit', function(request, response) {
   	// } else {
     	// var querystring = url.parse(request.url).query;
     	// var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');    
-    	var query = JSON.parse(response.body);
-    	if (typeof query['name'] ==  undefined || typeof query['id'] ==  undefined || typeof query['genre'] ==  undefined || typeof query['year'] ==  undefined) {
-      		response.send('Please send valid queries with movie name, id, genre, and year');
-    	} else {
-    		var name = query['name'];
-    		var id = query['id'];
-    		var genre = query['genre'];
-    		var year = query['year'];
-		    var toInsert = {
-		    	"name" : name,
-		        "id" : id,
-		        "genre" : genre,
-		        "year" : year
-		    };
-    		db.collection('movies', function(err, col) {
-    			if (err) {
-    				response.send(500);
-    			} else {
-    				coll.insert(toInsert, function(error, saved) {
-    					if (error) {
-    						response.send(500);
-    					} else {
-    						response.send(200);
-    					}
-    				});
-    			}
-    		});
-    	}
+    var query = JSON.parse(responseBody);
+    if (typeof query['name'] ==  undefined || typeof query['id'] ==  undefined || typeof query['genre'] ==  undefined || typeof query['year'] ==  undefined) {
+      	response.send('Please send valid queries with movie name, id, genre, and year');
+    } else {
+    	var name = query['name'];
+    	var id = query['id'];
+    	var genre = query['genre'];
+    	var year = query['year'];
+	    var toInsert = {
+	    	"name" : name,
+	        "id" : id,
+	        "genre" : genre,
+	        "year" : year
+	    };
+    	db.collection('movies', function(err, col) {
+    		if (err) {
+    			response.send(500);
+    		} else {
+    			coll.insert(toInsert, function(error, saved) {
+    				if (error) {
+    					response.send(500);
+    				} else {
+    					response.send(200);
+    				}
+    			});
+    		}
+   		});
+   	}
 //    }
 });
 
