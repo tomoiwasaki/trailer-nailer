@@ -73,7 +73,7 @@ app.post('/submit', function(request, response) {
    	}
 });
 
-app.get('\movies', function(request, response) {
+app.get('/movies', function(request, response) {
 	db.collection('movies', function(er, col) {
 		if (er) {
 			response.sendStatus(500);
