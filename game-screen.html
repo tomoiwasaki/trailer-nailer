@@ -43,6 +43,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 
+<script src="jquery-3.1.1.min.js"></script>
 <script>
     // 2. This code loads the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
@@ -53,47 +54,52 @@
 
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
-    var player;
-    var videoid = 'JhvrQeY3doI';
-    var vidduration;
+    $.get('http://trailer-nailer.herokuapp.com/movies', function(data) {
+      var player;
+      var allVideos = data;
+      console.log(allVideos);
+      var videoid = 'JhvrQeY3doI';
+      var vidduration;
 
-    var youTubeURL = 'https://www.googleapis.com/youtube/v3/videos?id='+videoid+'&part=contentDetails&key=AIzaSyC6odj3vLS1mLL9a4y30b46gNIQXyRzoXI';
+      var youTubeURL = 'https://www.googleapis.com/youtube/v3/videos?id='+videoid+'&part=contentDetails&key=AIzaSyC6odj3vLS1mLL9a4y30b46gNIQXyRzoXI';
 
 
-    function onYouTubeIframeAPIReady() {
-    	start = Math.floor(Math.random() * 30) + 15;
-    	end = start + 10;
+      function onYouTubeIframeAPIReady() {
+        start = Math.floor(Math.random() * 30) + 15;
+        end = start + 10;
 
-   	    player = new YT.Player('video', {
-     	    height: '350',
-            width: '640',
-            videoId: 'JhvrQeY3doI',
-            playerVars: {
-            	autoplay: '1',
-            	controls: '0',
-            	showinfo: '0',
-            	start: start,
-            	end: end
-        	},
-            events: {
-            	'onReady': onPlayerReady,
-          	}
-        });
-    }
+          player = new YT.Player('video', {
+            height: '350',
+              width: '640',
+              videoId: 'JhvrQeY3doI',
+              playerVars: {
+                autoplay: '1',
+                controls: '0',
+                showinfo: '0',
+                start: start,
+                end: end
+            },
+              events: {
+                'onReady': onPlayerReady,
+              }
+          });
+      }
 
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {   	
-	    event.target.playVideo();
-    }
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {     
+        event.target.playVideo();
+      }
 
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
 
-    function stopVideo() {
-        player.stopVideo();
-    }
+      function stopVideo() {
+          player.stopVideo();
+      }
+    });
+    
 </script>
 <h1 id="title">Which movie is this?</h1>
 

@@ -43,7 +43,6 @@ app.post('/submit', function(request, response) {
     	// var querystring = url.parse(request.url).query;
     	// var query = JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"').replace(/\s/g,'') + '"}');  
     var query = request.body;
-    console.log(query);
     // var query = JSON.parse(request.body);
     if (typeof query['name'] ==  undefined || typeof query['id'] ==  undefined || typeof query['genre'] ==  undefined || typeof query['year'] ==  undefined) {
       	response.send('Please send valid queries with movie name, id, genre, and year');
@@ -74,4 +73,18 @@ app.post('/submit', function(request, response) {
    	}
 });
 
-
+app.get('\movies', function(request, response) {
+	db.collection('movies', function(er, col) {
+		if (er) {
+			response.sendStatus(500);
+		} else {
+			col.find().toArray(function(error, result) {
+				if (error) {
+					response.sendStatus(500);
+				} else {
+					response.send(result);
+				}
+			});
+		}
+	});
+});
