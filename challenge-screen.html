@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:fb="https://www.facebook.com/2008/fbml">
-  <head>
+<html>
+<head>
   <title>Login</title>
 
   <meta charset="UTF-8">
@@ -52,37 +51,9 @@
     </div>
   </div>
 
-  <p>
-<input type="button"
-  onclick="sendRequestViaMultiFriendSelector(); return false;"
-  value="Send Request To Your Facebook Friends"
-/>
-</p>
-
-<script>
-  FB.init({
-    appId  : 'APP_ID',
-    frictionlessRequests: true
-  });
-
-  function sendRequestToRecipients() {
-    var user_ids = document.getElementsByName("user_ids")[0].value;
-    FB.ui({method: 'apprequests',
-      message: 'Awesome Application try it once',
-      to: user_ids
-    }, requestCallback);
-  }
-
-  function sendRequestViaMultiFriendSelector() {
-    FB.ui({method: 'apprequests',
-      message: 'Awesome application try it once'
-    }, requestCallback);
-  }
-
-  function requestCallback(response) {
-    // Handle callback here
-  }
-</script>
+<div class="col-xl-4 text-center">
+  <button type="button" class="btn-facebook">Invite A Friend From Facebook</button>
+</div>
 
 </body>
 </html>
