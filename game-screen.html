@@ -68,15 +68,6 @@
         var start = Math.floor(Math.random() * 30) + 15;
         var end = start + 10;
         html += '<iframe width="640" height="350"';
-          /*
-          html += '<param name="movie" value="http://www.youtube.com/v/'+id+'"></param>';
-          html += '<param name="autoplay" value="1">';
-          html += '<param name="control" value="0">';
-          html += '<param name="wmode" value="transparent"></param>';
-          html += '<param name="showinfo" value="0"></param>';
-          html += '<param name="start" value="'+ start + '"></param>';
-          html += '<param name="end" value="'+ end + '"></param>';
-          */
         html += '<embed src="https://www.youtube.com/embed/'+id+'?autoplay=1'+ '&control=0' + '&modestbranding=1' + '&showinfo=0' + '&start=' + start + '&end=' + end + '&allowfullscreen=0' +'&type="application/x-shockwave-flash" wmode="transparent" ></embed>';
         html += '</iframe>';
         next++;

@@ -11,10 +11,10 @@ Project Title: Trailer Nailer
 - Basic CSS/HTML for "Challenge Your Friends" screen created, using bootstrap.
 
 2. Challenges and issues team faced during the week
-- Getting stuck while finding a way to change video immediately after a choice is made by the user. Last resort is to fetch a new page from the server but it will be a very inefficient solution. 
+- Getting stuck while finding a way to change video immediately after a choice is made by the user. Last resort is to fetch a new page from the server but it will be a very inefficient solution. (Edit: Resolved!!!)
 
 3. Goals for the next week
-- Resolve the video switching issue.
+- Resolve the video switching issue. (Edit: Resolved!!!)
 - Perfect the score and timing system.
 - Built the "Challenge your friend" page so that it functions as expected.
 - Add more movies to the library.
