@@ -124,12 +124,15 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
 
+      var nodes = document.getElementsByClassName('sign-in-text text-center col-md-4 col-md-offset-4');
+      nodes[0].innerHTML = "Welcome!";
+
       loggedIn();
 
       function loggedIn() {
         setTimeout(myTimeout1, 2000)
         setTimeout(myTimeout2, 4000)
-        setTimeout(myTimeout3, 6000)
+        //setTimeout(myTimeout3, 6000)
       }
       function myTimeout1() {
         document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
@@ -152,10 +155,11 @@
 -->
 
 <div class="col-xl-4 text-center">
-    <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-    <div id="status">
-    </div>
+    <div id = "fb-login-button"><fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button></div></div>
+</div>
+<div class="col-xl-4 text-center">
+    <div id="status"></div>
 </div>
 
 </body>
