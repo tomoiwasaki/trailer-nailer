@@ -1,4 +1,4 @@
-Comp20 Status Report 1
+Comp20 Status Report 2
 
 Minh D. Nguyen, Huynh Tran, Tomo Iwasaki, Arpan Gurung, Georgios Frantzis Phylactopoulos
 
