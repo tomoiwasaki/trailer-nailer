@@ -8,7 +8,7 @@ Project Title: Trailer Nailer
 - Game screen redirects to a new "Game Over" screen when time is up in the game
 
 2. Challenges and issues team faced during the week
-- 
+-  
 
 3. Goals for the next week
 - 
