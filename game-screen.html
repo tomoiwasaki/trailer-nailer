@@ -50,16 +50,72 @@
       var allIds = [];
       var allNames = [];
       var next = 0;
+      var score = 0;
+
+
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+      }
+
     $.get('http://trailer-nailer.herokuapp.com/movies', function(data) {
       allVideos = data;
+      allVideos = shuffleArray(allVideos);
       for (var i = 0; i < allVideos.length; i++) {
         allIds.push(allVideos[i].id);
         allNames.push(allVideos[i].name);
       }
+
     $(document).ready(function() {
       $("#video").html(playvid(allIds[next])); 
+      var allInd = [];
+      for (var i = 0; i < allNames.length; i++) {
+        if (i != next - 1) {
+          allInd.push(i);
+        }
+      }
+      allInd = shuffleArray(allInd);
+      var name1 = allNames[allInd[0]];
+      var name2 = allNames[allInd[1]];
+      var name3 = allNames[allInd[2]];
+      var correctName = allNames[next - 1];
+      var buttonInd = [1, 2, 3, 4];
+      buttonInd = shuffleArray(buttonInd);
+      var id1 = "#choice" + buttonInd[0];
+      var id2 = "#choice" + buttonInd[1];
+      var id3 = "#choice" + buttonInd[2];
+      var id4 = "#choice" + buttonInd[3];
+      $(id1).html(correctName);
+      $(id2).html(name1);
+      $(id3).html(name2);
+      $(id4).html(name3);
+
       $('button').click(function() { 
+        if ($(this).text() == correctName) {
+          score++;
+          document.getElementById("score").innerHTML = "Score: " + score;
+        }
         $("#video").html(playvid(allIds[next])); 
+        allInd = shuffleArray(allInd);
+        var name1 = allNames[allInd[0]];
+        var name2 = allNames[allInd[1]];
+        var name3 = allNames[allInd[2]];
+        correctName = allNames[next - 1];
+        var buttonInd = [1, 2, 3, 4];
+        buttonInd = shuffleArray(buttonInd);
+        var id1 = "#choice" + buttonInd[0];
+        var id2 = "#choice" + buttonInd[1];
+        var id3 = "#choice" + buttonInd[2];
+        var id4 = "#choice" + buttonInd[3];
+        $(id1).html(correctName);
+        $(id2).html(name1);
+        $(id3).html(name2);
+        $(id4).html(name3);
       });
 
       function playvid(id)
@@ -87,25 +143,14 @@
 </div>
 
 <div id="choices">
-	<button onclick="notscore()">Finding Nemo</button>
-	<button onclick="notscore()">Zootopia</button>
-	<button onclick="notscore()">Reef</button>
-	<button onclick="plusscore()">Finding Dory</button>
+	<button id='choice1'></button>
+	<button id='choice2'></button>
+	<button id='choice3'></button>
+	<button id='choice4'></button>
+  <button id='skip'>Skip this movie!</button>
 </div>
 
 <h3 id="score"> Score: 0 </h3> 
-
-<script type="text/javascript">
-	var score = 0;
-	function notscore(){
-		document.getElementById("score").innerHTML = "Score: " + score;
-	}
-	function plusscore(){
-		score++;
-		document.getElementById("score").innerHTML = "Score: " + score;
-  }
-</script>
-
 
 <script type="text/javascript">
 	function startTimer(duration, display) {
