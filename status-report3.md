@@ -9,6 +9,8 @@ Project Title: Trailer Nailer
 - Perfect the score and timing system.
 - Styling was added to the game screen with bootstrap and the styling in all 
   pages was modified so that they are mobile-friendly.
+- Implemented Guest login in addition to facebook login and a main menu page
+  displaying a welcome message based on the login.
 
 2. Challenges and issues team faced during the week
 -  Finding a way to redirect to the next video right after a video stops playing.
