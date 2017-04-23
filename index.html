@@ -135,10 +135,10 @@
         setTimeout(myTimeout3, 6000)
       }
       function myTimeout1() {
-        document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+        document.getElementById('fb-login-button').innerHTML = 'Thanks for logging in, ' + response.name + '!';
       }
       function myTimeout2() {
-        document.getElementById("status").innerHTML = "You will now be redirected to the main menu...";
+        document.getElementById("fb-login-button").innerHTML = "You will now be redirected to the main menu...";
       }
       function myTimeout3() {
         window.location.replace("main-menu.html");
