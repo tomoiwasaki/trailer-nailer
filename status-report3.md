@@ -20,3 +20,8 @@ Project Title: Trailer Nailer
 - Complete challenge screen.
 - Put all discrete components together.
 - Perfect styling and alignment.
+
+# Comments by Ming
+* "Built the "Challenge your friend" page so that it functions as expected." => well?
+* "Add more movies to the library." => done?
+* " Perfect styling and alignment." => good luck with that...
