@@ -33,6 +33,16 @@ app.get('/', function(request, response) {
 	response.sendfile('index.html');
 });
 
+app.get('/index.html', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  response.sendfile('index.html');
+});
+
+app.get('/Login_Background.jpg', function(request, response) {
+  response.set('Content-Type', 'image/jpg');
+  response.sendfile('Login_Background.jpg');
+});
+
 app.get('/main-menu.html', function(request, response) {
   response.set('Content-Type', 'text/html');
   response.sendfile('main-menu.html');
@@ -52,6 +62,22 @@ app.get('/genre-screen.css', function(request, response) {
   response.set('Content-Type', 'text/css');
   response.sendfile('genre-screen.css');
 });
+
+app.get('/challenge-screen.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('challenge-screen.css');
+});
+
+app.get('/game-screen.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('game-screen.css');
+});
+
+app.get('/index.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('index.css');
+});
+
 
 app.get('/bootstrap-social.css', function(request, response) {
   response.set('Content-Type', 'text/css');

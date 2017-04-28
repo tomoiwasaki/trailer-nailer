@@ -1,7 +1,7 @@
 @media only screen and
   (min-width: 1150px)  {
     body {
-         background: url(Login_Background.jpg);
+         background: url(/Login_Background.jpg);
          background-size:cover;
          background-repeat:   no-repeat;
     }
@@ -90,3 +90,4 @@
     font:helvetica;
     font-size: 22px;
 }
+
