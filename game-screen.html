@@ -71,7 +71,7 @@
         return array;
       }
 
-    $.get('http://trailer-nailer.herokuapp.com/movies', function(data) {
+    $.get('https://trailer-nailer.herokuapp.com/movies', function(data) {
       allVideos = data;
       allVideos = shuffleArray(allVideos);
       for (var i = 0; i < allVideos.length; i++) {

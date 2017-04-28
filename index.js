@@ -175,8 +175,8 @@ app.get('/movies', function(request, response) {
 */
 
 app.get('/movies', function(request, response) {
-  //response.header("Access-Control-Allow-Origin", "*");
-  //response.header("Access-Control-Allow-Headers", "X-Requested-With");
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "X-Requested-With");
   db.collection('movies', function(er, col) {
     if (er) {
       response.sendStatus(500);
