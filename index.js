@@ -33,7 +33,7 @@ app.get('/', function(request, response) {
 	response.sendfile('index.html');
 });
 
-app.get('/', function(request, response) {
+app.get('/main-menu.html', function(request, response) {
   response.set('Content-Type', 'text/html');
   response.sendfile('main-menu.html');
 });
