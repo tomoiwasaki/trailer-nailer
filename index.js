@@ -38,6 +38,11 @@ app.get('/main-menu.html', function(request, response) {
   response.sendfile('main-menu.html');
 });
 
+app.get('/challenge-screen.html', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  response.sendfile('challenge-screen.html');
+});
+
 app.get('/genre-screen.html', function(request, response) {
   response.set('Content-Type', 'text/html');
   response.sendfile('genre-screen.html');
