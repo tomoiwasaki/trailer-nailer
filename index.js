@@ -33,6 +33,12 @@ app.get('/', function(request, response) {
 	response.sendfile('index.html');
 });
 
+app.get('/', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  response.sendfile('main-menu.html');
+});
+
+
 app.post('/submit', function(request, response) {
   	response.header("Access-Control-Allow-Origin", "*");
   	response.header("Access-Control-Allow-Headers", "X-Requested-With");	
