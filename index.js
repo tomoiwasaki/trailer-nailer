@@ -99,18 +99,38 @@ app.post('/submit', function(request, response) {
 });
 
 app.get('/movies', function(request, response) {
-	response.header("Access-Control-Allow-Origin", "*");
-  	response.header("Access-Control-Allow-Headers", "X-Requested-With");
+	//response.header("Access-Control-Allow-Origin", "*");
+  //response.header("Access-Control-Allow-Headers", "X-Requested-With");
+  var genre = request.query.genre;
+  if (genre != undefined && genre != null) {
+    genre = genre.replace(/[^\w\s]/gi, '');
+  }
+  if (genre == undefined) {
+    db.collection('movies', function(er, col) {
+      if (er) {
+        response.sendStatus(500);
+      } else {
+        col.find().toArray(function(error, result) {
+          if (error) {
+            response.sendStatus(500);
+          } else {
+            response.send(result);
+          }
+        });
+      }
+    });
+  }
+  
 	db.collection('movies', function(er, col) {
 		if (er) {
 			response.sendStatus(500);
 		} else {
-			col.find().toArray(function(error, result) {
-				if (error) {
+      col.find({"genre" : genre}).toArray(function(error, result) {
+        if (error) {
 					response.sendStatus(500);
 				} else {
 					response.send(result);
-				}
+        }
 			});
 		}
 	});
