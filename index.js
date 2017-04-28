@@ -134,6 +134,7 @@ app.post('/submit', function(request, response) {
    	}
 });
 
+/*
 app.get('/movies', function(request, response) {
 	//response.header("Access-Control-Allow-Origin", "*");
   //response.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -170,4 +171,23 @@ app.get('/movies', function(request, response) {
 			});
 		}
 	});
+});
+*/
+
+app.get('/movies', function(request, response) {
+  //response.header("Access-Control-Allow-Origin", "*");
+  //response.header("Access-Control-Allow-Headers", "X-Requested-With");
+  db.collection('movies', function(er, col) {
+    if (er) {
+      response.sendStatus(500);
+    } else {
+      col.find().toArray(function(error, result) {
+        if (error) {
+          response.sendStatus(500);
+        } else {
+          response.send(result);
+        }
+      });
+    }
+  });
 });
