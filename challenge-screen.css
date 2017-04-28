@@ -90,3 +90,7 @@
     font:helvetica;
     font-size: 22px;
 }
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
