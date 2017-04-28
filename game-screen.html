@@ -107,7 +107,7 @@
         if ($(this).text() == correctName) {
           score++;
           document.getElementById("score").innerHTML = "Score: " + score;
-          //localStorage.setItem('score', score);
+          localStorage.setItem('score', score);
         }
         $("#video").html(playvid(allIds[next])); 
         allInd = shuffleArray(allInd);
