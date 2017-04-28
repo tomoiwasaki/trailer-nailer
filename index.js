@@ -48,6 +48,11 @@ app.get('/genre-screen.html', function(request, response) {
   response.sendfile('genre-screen.html');
 });
 
+app.get('/genre-screen.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('genre-screen.css');
+});
+
 app.get('/game-screen.html', function(request, response) {
   response.set('Content-Type', 'text/html');
   response.sendfile('game-screen.html');
@@ -120,7 +125,7 @@ app.get('/movies', function(request, response) {
       }
     });
   }
-  
+
 	db.collection('movies', function(er, col) {
 		if (er) {
 			response.sendStatus(500);
