@@ -53,6 +53,11 @@ app.get('/genre-screen.css', function(request, response) {
   response.sendfile('genre-screen.css');
 });
 
+app.get('/bootstrap-social.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('bootstrap-social.css');
+});
+
 app.get('/game-screen.html', function(request, response) {
   response.set('Content-Type', 'text/html');
   response.sendfile('game-screen.html');
