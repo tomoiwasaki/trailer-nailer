@@ -110,6 +110,12 @@
           document.getElementById("score").innerHTML = "Score: " + score;
         }
         $("#video").html(playvid(allIds[next])); 
+        allInd = [];
+        for (var i = 0; i < allNames.length; i++) {
+          if (i != next - 1) {
+            allInd.push(i);
+          }
+        }
         allInd = shuffleArray(allInd);
         var name1 = allNames[allInd[0]];
         var name2 = allNames[allInd[1]];
@@ -148,7 +154,7 @@
 
 <div class="holder">
      <div id="video"></div>
-     <div class="bar" id="bottom-layer">.</div>
+     <div class="bar" id="bottom-layer"></div>
 </div>
 
 <div id="choices">
