@@ -38,6 +38,11 @@ app.get('/index.html', function(request, response) {
   response.sendfile('index.html');
 });
 
+app.get('/Login_Background.jpg', function(request, response) {
+  response.set('Content-Type', 'image/jpg');
+  response.sendfile('Login_Background.jpg');
+});
+
 app.get('/main-menu.html', function(request, response) {
   response.set('Content-Type', 'text/html');
   response.sendfile('main-menu.html');
