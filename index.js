@@ -48,6 +48,11 @@ app.get('/game-screen.html', function(request, response) {
   response.sendfile('game-screen.html');
 });
 
+app.get('/game-over.html', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  response.sendfile('game-over.html');
+});
+
 app.post('/submit', function(request, response) {
   	response.header("Access-Control-Allow-Origin", "*");
   	response.header("Access-Control-Allow-Headers", "X-Requested-With");	
