@@ -30,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Trailer Nailer</a>
+        <a class="navbar-brand" href="index.html">Trailer Nailer</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,7 +62,6 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      console.log("Logged in!");
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
@@ -119,9 +118,7 @@
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
 
       var nodes = document.getElementsByClassName('sign-in-text text-center col-md-4 col-md-offset-4');
       nodes[0].innerHTML = "Welcome!";
@@ -140,7 +137,7 @@
         document.getElementById("fb-login-button").innerHTML = "You will now be redirected to the main menu...";
       }
       function myTimeout3() {
-        window.location.replace("/main-menu.html");
+        window.location.replace("main-menu.html");
       }
 
     });

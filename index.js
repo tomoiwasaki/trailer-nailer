@@ -53,6 +53,22 @@ app.get('/genre-screen.css', function(request, response) {
   response.sendfile('genre-screen.css');
 });
 
+app.get('/challenge-screen.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('challenge-screen.css');
+});
+
+app.get('/game-screen.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('game-screen.css');
+});
+
+app.get('/index.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendfile('index.css');
+});
+
+
 app.get('/bootstrap-social.css', function(request, response) {
   response.set('Content-Type', 'text/css');
   response.sendfile('bootstrap-social.css');
