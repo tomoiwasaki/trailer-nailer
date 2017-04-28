@@ -47,7 +47,7 @@
 
   <div class="container container-table">
     <div class="row vertical-center-row">
-        <div class="sign-in-text text-center col-md-4 col-md-offset-4">Please Sign in with Facebook</div>
+        <div class="sign-in-text text-center col-md-4 col-md-offset-4"></div>
     </div>
   </div>
 
@@ -67,7 +67,8 @@
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Login as a <a href="/main-menu.html">guest</a>';
+      var nodes = document.getElementsByClassName('sign-in-text text-center col-md-4 col-md-offset-4');
+      nodes[0].innerHTML = "Welcome, Guest!";
     }
   }
 
@@ -125,25 +126,7 @@
       console.log('Successful login for: ' + response.name);
 
       var nodes = document.getElementsByClassName('sign-in-text text-center col-md-4 col-md-offset-4');
-      nodes[0].innerHTML = "Welcome!";
-
-      loggedIn();
-
-      function loggedIn() {
-        setTimeout(myTimeout1, 2000)
-        setTimeout(myTimeout2, 4000)
-        setTimeout(myTimeout3, 6000)
-      }
-      function myTimeout1() {
-        document.getElementById('fb-login-button').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-      }
-      function myTimeout2() {
-        document.getElementById("fb-login-button").innerHTML = "You will now be redirected to the main menu...";
-      }
-      function myTimeout3() {
-        window.location.replace("main-menu.html");
-      }
-
+      nodes[0].innerHTML = "Welcome, " + response.name + "!";
     });
   }
 </script>
@@ -155,11 +138,10 @@
 -->
 
 <div class="col-xl-4 text-center">
-    <div id = "fb-login-button"><fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button></div></div>
-</div>
-<div class="col-xl-4 text-center">
-    <div id="status"></div>
+    <ul>
+      <li><a href = "game-screen.html">Play Game</a></li>
+      <li>Other Stuff</li>
+    </ul>
 </div>
 
 </body>
