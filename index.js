@@ -38,6 +38,15 @@ app.get('/main-menu.html', function(request, response) {
   response.sendfile('main-menu.html');
 });
 
+app.get('/genre-screen.html', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  response.sendfile('genre-screen.html');
+});
+
+app.get('/game-screen.html', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  response.sendfile('game-screen.html');
+});
 
 app.post('/submit', function(request, response) {
   	response.header("Access-Control-Allow-Origin", "*");
