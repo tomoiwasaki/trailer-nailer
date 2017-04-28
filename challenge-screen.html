@@ -57,9 +57,36 @@
 
 <br><br><br>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '658317147697605',
+      xfbml      : true,
+      version    : 'v2.9'
+    });
+      FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+
+  function inviteFacebook(){
+    FB.ui({
+      method: 'send',
+      link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
+    });
+  }
+</script>
+
 <div class="col-xl-4 text-center">
   <a class="btn btn-social btn-facebook">
-    <span class="fa fa-facebook"></span> Invite A Facebook Friend
+    <span class="fa fa-facebook" onclick="inviteFacebook()"></span> Invite A Facebook Friend
   </a>
   &nbsp;&nbsp;
   <a class="btn btn-social btn-reddit" href="mailto:?subject=Check out this game!&body=Hi Friend! I found this cool game that tests your movie knowledge and thought you might like. Check it out! file://gamescreen.html ">
