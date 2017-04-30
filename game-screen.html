@@ -87,12 +87,11 @@
         }
       }
       $("#video").html(playvid(allIds[next])); 
-      next++;
       allInd = shuffleArray(allInd);
       var name1 = allNames[allInd[0]];
       var name2 = allNames[allInd[1]];
       var name3 = allNames[allInd[2]];
-      var correctName = allNames[next - 1];
+      var correctName = allNames[next];
       var buttonInd = [1, 2, 3, 4];
       buttonInd = shuffleArray(buttonInd);
       var id1 = "#choice" + buttonInd[0];
@@ -103,6 +102,7 @@
       $(id2).html(name1);
       $(id3).html(name2);
       $(id4).html(name3);
+      next++;
 
       $('button').click(function() { 
         if ($(this).text() == correctName) {
@@ -110,13 +110,13 @@
           document.getElementById("score").innerHTML = "Score: " + score;
           localStorage.setItem('score', score);
         }
+
         $("#video").html(playvid(allIds[next])); 
-        next++;
         allInd = shuffleArray(allInd);
         var name1 = allNames[allInd[0]];
         var name2 = allNames[allInd[1]];
         var name3 = allNames[allInd[2]];
-        correctName = allNames[next - 1];
+        correctName = allNames[next];
         var buttonInd = [1, 2, 3, 4];
         buttonInd = shuffleArray(buttonInd);
         var id1 = "#choice" + buttonInd[0];
@@ -127,6 +127,8 @@
         $(id2).html(name1);
         $(id3).html(name2);
         $(id4).html(name3);
+        next++;
+
       });
                            
       function playvid(id)
