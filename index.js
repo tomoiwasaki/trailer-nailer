@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var validator = require('validator'); 
 var url = require("url");
+var fs = require('fs');
+var path = require("path");
 var app = express();
 
 var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://trailer-nailer.herokuapp.com/movies';
@@ -30,68 +32,83 @@ app.listen(app.get('port'), function() {
 
 app.get('/', function(request, response) {
 	response.set('Content-Type', 'text/html');
-	response.sendfile('index.html');
+	response.sendFile(__dirname + '/index.html');
 });
 
 app.get('/index.html', function(request, response) {
   response.set('Content-Type', 'text/html');
-  response.sendfile('index.html');
+  response.sendFile(__dirname + '/index.html');
 });
 
 app.get('/Login_Background.jpg', function(request, response) {
   response.set('Content-Type', 'image/jpg');
-  response.sendfile('Login_Background.jpg');
+  response.sendFile(__dirname + '/Login_Background.jpg');
 });
 
 app.get('/main-menu.html', function(request, response) {
   response.set('Content-Type', 'text/html');
-  response.sendfile('main-menu.html');
+  response.sendFile(__dirname + '/main-menu.html');
 });
 
 app.get('/challenge-screen.html', function(request, response) {
   response.set('Content-Type', 'text/html');
-  response.sendfile('challenge-screen.html');
+  response.sendFile(__dirname + '/challenge-screen.html');
 });
 
 app.get('/genre-screen.html', function(request, response) {
   response.set('Content-Type', 'text/html');
-  response.sendfile('genre-screen.html');
+  response.sendFile(__dirname + '/genre-screen.html');
 });
 
 app.get('/genre-screen.css', function(request, response) {
   response.set('Content-Type', 'text/css');
-  response.sendfile('genre-screen.css');
+  response.sendFile(__dirname + '/genre-screen.css');
 });
 
 app.get('/challenge-screen.css', function(request, response) {
   response.set('Content-Type', 'text/css');
-  response.sendfile('challenge-screen.css');
+  response.sendFile(__dirname + '/challenge-screen.css');
 });
 
 app.get('/game-screen.css', function(request, response) {
   response.set('Content-Type', 'text/css');
-  response.sendfile('game-screen.css');
+  response.sendFile(__dirname + '/game-screen.css');
 });
 
 app.get('/index.css', function(request, response) {
   response.set('Content-Type', 'text/css');
-  response.sendfile('index.css');
+  response.sendFile(__dirname + '/index.css');
 });
 
 
 app.get('/bootstrap-social.css', function(request, response) {
   response.set('Content-Type', 'text/css');
-  response.sendfile('bootstrap-social.css');
+  response.sendFile(__dirname + '/bootstrap-social.css');
 });
 
 app.get('/game-screen.html', function(request, response) {
-  response.set('Content-Type', 'text/html');
-  response.sendfile('game-screen.html');
+  var genre = request.query.genre;
+  if (genre == undefined || genre == '') {
+        genre = "all";
+  }
+  fs.readFile("game-screen.html", function (error, pgResp) {
+    if (error) {
+      response.writeHead(404);
+      response.write('Contents you are looking are Not Found');
+    } else {
+      response.writeHead(200, { 'Content-Type': 'text/html' });
+      pgResp = "<script> var genre = " + "'" + genre + "'" +"; </script>"+ pgResp;
+      response.write(pgResp);
+    }            
+    response.end();
+  });  
+  // response.set('Content-Type', 'text/html');
+  // response.sendFile('game-screen.html');
 });
 
 app.get('/game-over.html', function(request, response) {
   response.set('Content-Type', 'text/html');
-  response.sendfile('game-over.html');
+  response.sendFile(__dirname + '/game-over.html');
 });
 
 app.post('/submit', function(request, response) {
@@ -178,7 +195,7 @@ app.get('/movies', function(request, response) {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "X-Requested-With");
   var genre = request.query.genre;
-  if (genre == undefined) {
+  if (genre == undefined || genre == '' || genre == "all") {
     db.collection('movies', function(er, col) {
       if (er) {
         response.sendStatus(500);
@@ -201,7 +218,17 @@ app.get('/movies', function(request, response) {
           if (error) {
             response.sendStatus(500);
           } else {
-            response.send(result);
+            if (result.length > 0) {
+              response.send(result);
+            } else {
+              col.find({}).toArray(function(e, r) {
+                if (e) {
+                  response.sendStatus(500);
+                } else {
+                  response.send(r);
+                }
+              });
+            }
           }
         });
       }

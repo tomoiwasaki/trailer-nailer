@@ -71,8 +71,18 @@
         return array;
       }
 
-    $.get('https://trailer-nailer.herokuapp.com/movies', function(data) {
+      if (genre == undefined || genre == '') {
+        genre = "all";
+      }
+
+      console.log(genre);
+
+      var queryURL = 'https://trailer-nailer.herokuapp.com/movies?genre=' + genre; 
+      //var queryURL = 'http://localhost:5000/movies?genre=' + genre;
+
+    $.get(queryURL, function(data) {
       allVideos = data;
+      console.log(data);
       allVideos = shuffleArray(allVideos);
       for (var i = 0; i < allVideos.length; i++) {
         allIds.push(allVideos[i].id);
@@ -128,7 +138,6 @@
         var name2 = allNames[allInd[1]];
         var name3 = allNames[allInd[2]];
         correctName = allNames[next];
-        console.log(correctName);
         var buttonInd = [1, 2, 3, 4];
         buttonInd = shuffleArray(buttonInd);
         var id1 = "#choice" + buttonInd[0];
