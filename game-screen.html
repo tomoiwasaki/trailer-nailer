@@ -105,7 +105,7 @@
       $(id4).html(name3);
       next++;
 
-      $('button').click(function() { 
+      $('.choicebutton').click(function() { 
         if ($(this).text() == correctName) {
           score++;
           document.getElementById("score").innerHTML = "Score: " + score;
@@ -116,7 +116,13 @@
           window.location.replace("http://trailer-nailer.herokuapp.com/game-over.html");
         }
 
-        $("#video").html(playvid(allIds[next])); 
+        $("#video").html(playvid(allIds[next]));
+        var allInd = [];
+        for (var i = 0; i < allNames.length; i++) {
+          if (i != next) {
+            allInd.push(i);
+          }
+        } 
         allInd = shuffleArray(allInd);
         var name1 = allNames[allInd[0]];
         var name2 = allNames[allInd[1]];
@@ -165,11 +171,11 @@
   <div class="container"> 
     <div class="row"> 
       <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-2">
-      	<button id='choice1' class="btn btn-default"></button>
-      	<button id='choice2' class="btn btn-default"></button>
-      	<button id='choice3' class="btn btn-default"></button>
-      	<button id='choice4' class="btn btn-default"></button>
-        <button id='skip' class="btn btn-default">Skip this movie!</button>
+      	<button id='choice1' class="btn btn-default" class="choicebutton"></button>
+      	<button id='choice2' class="btn btn-default" class="choicebutton"></button>
+      	<button id='choice3' class="btn btn-default" class="choicebutton"></button>
+      	<button id='choice4' class="btn btn-default" class="choicebutton"></button>
+        <button id='skip' class="btn btn-default" class="choicebutton">Skip this movie!</button>
       </div>
     </div>
   </div>
