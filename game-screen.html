@@ -37,7 +37,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/index.html">Trailer Nailer</a>
+        <a class="navbar-brand" href="/main-menu.html">Trailer Nailer</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,7 +71,7 @@
         return array;
       }
 
-    $.get('https://trailer-nailer.herokuapp.com/movies', function(data) {
+    $.get('trailer-nailer.herokuapp.com/movies', function(data) {
       allVideos = data;
       allVideos = shuffleArray(allVideos);
       for (var i = 0; i < allVideos.length; i++) {
@@ -80,13 +80,14 @@
       }
 
     $(document).ready(function() {
-      $("#video").html(playvid(allIds[next])); 
       var allInd = [];
       for (var i = 0; i < allNames.length; i++) {
-        if (i != next - 1) {
+        if (i != next) {
           allInd.push(i);
         }
       }
+      $("#video").html(playvid(allIds[next])); 
+      next++;
       allInd = shuffleArray(allInd);
       var name1 = allNames[allInd[0]];
       var name2 = allNames[allInd[1]];
@@ -110,6 +111,7 @@
           localStorage.setItem('score', score);
         }
         $("#video").html(playvid(allIds[next])); 
+        next++;
         allInd = shuffleArray(allInd);
         var name1 = allNames[allInd[0]];
         var name2 = allNames[allInd[1]];
@@ -135,7 +137,7 @@
         html += "<iframe class='embed-responsive-item'";
         html += '<embed src="https://www.youtube.com/embed/'+id+'?autoplay=1'+ '&control=0' + '&modestbranding=1' + '&showinfo=0' + '&start=' + start + '&end=' + end + '&allowfullscreen=0' +'&type="application/x-shockwave-flash" wmode="transparent" ></embed>';
         html += '</iframe></div></div></div></div>';
-        next++;
+
         return html;
       }
     });
