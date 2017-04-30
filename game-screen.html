@@ -149,12 +149,12 @@
                            
       function playvid(id)
       {
-        var html = '<div class="container"> <div class="row"> <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-2"> <div class="embed-responsive embed-responsive-16by9">';
+        var html = '<div class="embed-responsive embed-responsive-16by9">';
         var start = Math.floor(Math.random() * 30) + 15;
         var end = start + 10;
         html += "<iframe class='embed-responsive-item'";
         html += '<embed src="https://www.youtube.com/embed/'+id+'?autoplay=1'+ '&control=0' + '&modestbranding=1' + '&showinfo=0' + '&start=' + start + '&end=' + end + '&allowfullscreen=0' +'&type="application/x-shockwave-flash" wmode="transparent" ></embed>';
-        html += '</iframe></div></div></div></div>';
+        html += '</iframe>';
 
         return html;
       }
@@ -166,10 +166,19 @@
 
 <div id="timer"> <span id="time"></span> </div>
 
-<div class="holder">
-     <video id="video"></video>
-     <div class="bar" id="bottom-layer">.</div>
+
+<div class="container"> 
+  <div class="row"> 
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-2">
+        <div class="holder">
+          <div id="video"></div>
+            <div class="bar" id="bottom-layer"></div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
+<br><br>
 
 <div id="choices">
   <div class="container"> 
