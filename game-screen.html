@@ -92,6 +92,7 @@
       var name2 = allNames[allInd[1]];
       var name3 = allNames[allInd[2]];
       var correctName = allNames[next];
+      console.log(correctName);
       var buttonInd = [1, 2, 3, 4];
       buttonInd = shuffleArray(buttonInd);
       var id1 = "#choice" + buttonInd[0];
@@ -198,7 +199,7 @@
 	}
 
 	window.onload = function () {
-    	var oneMinute = 60,
+    	var oneMinute = 60000,
         display = document.querySelector('#time');
     	startTimer(oneMinute, display);
 	};
