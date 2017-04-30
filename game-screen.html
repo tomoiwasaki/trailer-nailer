@@ -105,7 +105,7 @@
       $(id4).html(name3);
       next++;
 
-      $('button').click(function() { 
+      $('.choicebutton').click(function() { 
         if ($(this).text() == correctName) {
           score++;
           document.getElementById("score").innerHTML = "Score: " + score;
@@ -171,11 +171,11 @@
   <div class="container"> 
     <div class="row"> 
       <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-2">
-      	<button id='choice1' class="btn btn-default"></button>
-      	<button id='choice2' class="btn btn-default"></button>
-      	<button id='choice3' class="btn btn-default"></button>
-      	<button id='choice4' class="btn btn-default"></button>
-        <button id='skip' class="btn btn-default">Skip this movie!</button>
+      	<button id='choice1' class="btn btn-default" class="choicebutton"></button>
+      	<button id='choice2' class="btn btn-default" class="choicebutton"></button>
+      	<button id='choice3' class="btn btn-default" class="choicebutton"></button>
+      	<button id='choice4' class="btn btn-default" class="choicebutton"></button>
+        <button id='skip' class="btn btn-default" class="choicebutton">Skip this movie!</button>
       </div>
     </div>
   </div>
