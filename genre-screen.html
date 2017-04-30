@@ -4,7 +4,7 @@
   <title>Choose A Genre</title>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width; initial-scale=1; user-scalable=0;">
 
   <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/1c390b7030.js"></script>
@@ -55,13 +55,28 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+<div class="col-xl-4 text-center">
+  <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#instructions">Instructions</button>
+  <div id="instructions" class="collapse">
+    <br>
+    Choose a movie genre below. <br>
+    You will be shown a short clip of a movie trailer from that genre, along with 4 movie titles to choose from. <br>
+    Try to guess the correct movie from watching the trailer! <br> 
+    You will be given 60 seconds to guess as many movies as you can correctly. <br>
+    You will get 1 point for every movie you guess correctly. If you aren't sure, click "Skip this movie!" <br>
+    Try to guess as many movies as you can before time is up!
+  </div>
+</div>
+
+<br><br>
+
   <div class="container container-table">
     <div class="row vertical-center-row">
         <div class="choose-a-genre-text text-center">Choose A Genre!</div>
     </div>
   </div>
 
-<br><br><br>
+<br><br>
 
 <div class="col-xl-4 text-center">
   <a class="btn btn-default" href="game-screen.html?genre=Comedy">
