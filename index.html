@@ -65,7 +65,8 @@
       // The person is not logged into your app or we are unable to tell.
       var nodes = document.getElementsByClassName('sign-in-text text-center col-md-4 col-md-offset-4');
       nodes[0].innerHTML = "Please Sign in";
-      document.getElementById('fb-login-button').innerHTML = '<fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></div>';
+      var inner  = '<fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></div>';
+      document.getElementById('fb-login-button').innerHTML = inner;
     }
   }
 
@@ -126,8 +127,9 @@
       loggedIn();
 
       function loggedIn() {
-        document.getElementById('fb-login-button').innerHTML = '<a class="btn btn-social btn-facebook" onclick="continue-redirect()"><span class="fa fa-facebook"></span> Continue as' + response.name + '</a>';
+        var inner = '<a class="btn btn-social btn-facebook" onclick="continue-redirect()"><span class="fa fa-facebook"></span> Continue as' + response.name + '</a>';
 
+        document.getElementById('fb-login-button').innerHTML = inner;
       }
       function continue-redirect() {
         window.location.replace("main-menu.html");
