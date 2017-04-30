@@ -46,7 +46,7 @@
 
   <div class="container container-table">
     <div class="row vertical-center-row">
-        <div class="sign-in-text text-center col-md-4 col-md-offset-4">Please Sign in with Facebook</div>
+        <div class="sign-in-text text-center col-md-4 col-md-offset-4"></div>
     </div>
   </div>
 
@@ -63,7 +63,8 @@
       testAPI();
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Login as a <a href="/main-menu.html">guest</a>';
+      var nodes = document.getElementsByClassName('sign-in-text text-center col-md-4 col-md-offset-4');
+      nodes[0].innerHTML = "Please Sign in";
     }
   }
 
@@ -153,7 +154,7 @@
     </fb:login-button></div></div>
 </div>
 <div class="col-xl-4 text-center">
-    <div id="status"></div>
+    <div id="status">Or login as a <a href="/main-menu.html">guest</a></div>
 </div>
 
 </body>
