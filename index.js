@@ -192,5 +192,19 @@ app.get('/movies', function(request, response) {
         });
       }
     });
+  } else {
+    db.collection('movies', function(er, col) {
+      if (er) {
+        response.sendStatus(500);
+      } else {
+        col.find({"genre":genre}).toArray(function(error, result) {
+          if (error) {
+            response.sendStatus(500);
+          } else {
+            response.send(result);
+          }
+        });
+      }
+    });
   }
 });
