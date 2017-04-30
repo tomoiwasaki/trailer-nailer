@@ -37,7 +37,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/index.html">Trailer Nailer</a>
+        <a class="navbar-brand" href="/main-menu.html">Trailer Nailer</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,18 +80,19 @@
       }
 
     $(document).ready(function() {
-      $("#video").html(playvid(allIds[next])); 
       var allInd = [];
       for (var i = 0; i < allNames.length; i++) {
-        if (i != next - 1) {
+        if (i != next) {
           allInd.push(i);
         }
       }
+      $("#video").html(playvid(allIds[next])); 
       allInd = shuffleArray(allInd);
       var name1 = allNames[allInd[0]];
       var name2 = allNames[allInd[1]];
       var name3 = allNames[allInd[2]];
-      var correctName = allNames[next - 1];
+      var correctName = allNames[next];
+      console.log(correctName);
       var buttonInd = [1, 2, 3, 4];
       buttonInd = shuffleArray(buttonInd);
       var id1 = "#choice" + buttonInd[0];
@@ -102,6 +103,7 @@
       $(id2).html(name1);
       $(id3).html(name2);
       $(id4).html(name3);
+      next++;
 
       $('button').click(function() { 
         if ($(this).text() == correctName) {
@@ -109,12 +111,14 @@
           document.getElementById("score").innerHTML = "Score: " + score;
           localStorage.setItem('score', score);
         }
+
         $("#video").html(playvid(allIds[next])); 
         allInd = shuffleArray(allInd);
         var name1 = allNames[allInd[0]];
         var name2 = allNames[allInd[1]];
         var name3 = allNames[allInd[2]];
-        correctName = allNames[next - 1];
+        correctName = allNames[next];
+        console.log(correctName);
         var buttonInd = [1, 2, 3, 4];
         buttonInd = shuffleArray(buttonInd);
         var id1 = "#choice" + buttonInd[0];
@@ -125,6 +129,8 @@
         $(id2).html(name1);
         $(id3).html(name2);
         $(id4).html(name3);
+        next++;
+
       });
                            
       function playvid(id)
@@ -135,7 +141,7 @@
         html += "<iframe class='embed-responsive-item'";
         html += '<embed src="https://www.youtube.com/embed/'+id+'?autoplay=1'+ '&control=0' + '&modestbranding=1' + '&showinfo=0' + '&start=' + start + '&end=' + end + '&allowfullscreen=0' +'&type="application/x-shockwave-flash" wmode="transparent" ></embed>';
         html += '</iframe></div></div></div></div>';
-        next++;
+
         return html;
       }
     });
@@ -167,7 +173,7 @@
 
 <h3 id="score"> Score: 0 </h3> 
 
-<meta http-equiv="refresh" content="63;url=/game-over.html" /> 
+<meta http-equiv="refresh" content="63000;url=/game-over.html" /> 
 
 <script type="text/javascript">
 	function startTimer(duration, display) {
@@ -194,7 +200,7 @@
 	}
 
 	window.onload = function () {
-    	var oneMinute = 60,
+    	var oneMinute = 60000,
         display = document.querySelector('#time');
     	startTimer(oneMinute, display);
 	};
