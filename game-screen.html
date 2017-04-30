@@ -112,6 +112,10 @@
           localStorage.setItem('score', score);
         }
 
+        if (next >= allVideos.length) {
+          window.location.replace("http://trailer-nailer.herokuapp.com/game-over.html");
+        }
+
         $("#video").html(playvid(allIds[next])); 
         allInd = shuffleArray(allInd);
         var name1 = allNames[allInd[0]];
