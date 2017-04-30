@@ -103,3 +103,8 @@ body {
           color: #333;
     }
 }
+
+.col-xs-12 col-sm-10 col-md-8 col-sm-offset-2 {
+    margin: 0 auto;
+    text-align: center;
+}
