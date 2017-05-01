@@ -90,5 +90,11 @@
     font-size: 40px;
 }
 
+#game-over-img {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
 
 
