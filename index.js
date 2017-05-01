@@ -111,6 +111,16 @@ app.get('/game-over.html', function(request, response) {
   response.sendFile(__dirname + '/game-over.html');
 });
 
+app.get('/game-over.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendFile(__dirname + '/game-over.css');
+});
+
+app.get('/game-over-logo.png', function(request, response) {
+  response.set('Content-Type', 'image/png');
+  response.sendFile(__dirname + '/game-over-logo.png');
+});
+
 app.post('/submit', function(request, response) {
   	response.header("Access-Control-Allow-Origin", "*");
   	response.header("Access-Control-Allow-Headers", "X-Requested-With");	
