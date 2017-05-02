@@ -166,9 +166,9 @@
 <h1 id="title">Which movie is this?</h1>
 <br>
 
-<h3 id="time"></h3>
+<h4 id="timer"></h4>
 
-<h3 id="score"> Score: 0 </h3> 
+<h4 id="score"> Score: 0 </h4> 
 
 <div class="container"> 
   <div class="row"> 
@@ -210,7 +210,7 @@
         	minutes = minutes < 10 ? minutes : minutes;
         	seconds = seconds < 10 ? "0" + seconds : seconds;
 
-            display = document.getElementById("time");
+            display = document.getElementById("timer");
             display.innerHTML = "Time Left: " + minutes + ":" + seconds;
 
             if(minutes == 0 && seconds == 0) {
