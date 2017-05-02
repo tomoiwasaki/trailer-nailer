@@ -153,8 +153,8 @@
         var html = '<div class="embed-responsive embed-responsive-16by9">';
         var start = Math.floor(Math.random() * 30) + 15;
         var end = start + 10;
-        html += "<iframe class='embed-responsive-item width='426' height='240'";
-        html += '<embed src="https://www.youtube.com/embed/'+id+'?autoplay=1'+ '&control=0' + '&modestbranding=1' + '&showinfo=0' + '&rel=0' + '&start=' + start + '&end=' + end + '&allowfullscreen=0' +'&type="application/x-shockwave-flash" wmode="transparent" ></embed>';
+        html += "<iframe class='embed-responsive-item";
+        html += '<embed width="426" height="240" src="https://www.youtube.com/embed/'+id+'?autoplay=1'+ '&control=0' + '&modestbranding=1' + '&showinfo=0' + '&rel=0' + '&start=' + start + '&end=' + end + '&allowfullscreen=0' +'&type="application/x-shockwave-flash" wmode="transparent" ></embed>';
         html += '</iframe>';
 
         return html;
@@ -194,6 +194,8 @@
     </div>
   </div>
 </div>
+
+<br><br><br>
 
 <meta http-equiv="refresh" content="63000;url=/game-over.html" /> 
 
